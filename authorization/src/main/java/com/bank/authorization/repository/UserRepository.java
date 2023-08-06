@@ -23,6 +23,6 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     //                   @Param("role") String role,
     //                   @Param("profileId") int profileId);
 
-    @Query(value = "SELECT * FROM users WHERE profile_id = :username", nativeQuery = true)
+    @Query(value = "SELECT * FROM auth.users WHERE profile_id = :username", nativeQuery = true)
     Optional<Users> getAllByProfileId(@Param("username") int username);
 }

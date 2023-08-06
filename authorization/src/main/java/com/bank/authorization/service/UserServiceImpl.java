@@ -67,6 +67,7 @@ public class UserServiceImpl implements UserService {
         Users users = new Users();
         AuditUser auditUser = new AuditUser();
         Optional<Users> optionalUsers = userDetailsServer.getUserPrincipalByUsername(user.getProfileId());
+        System.out.println(optionalUsers);
         optionalUsers.ifPresent(value -> users.setId(value.getId()));
         users.setProfileId(user.getProfileId());
         users.setRole(user.getRole());
