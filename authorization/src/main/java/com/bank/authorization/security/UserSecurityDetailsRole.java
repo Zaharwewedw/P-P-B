@@ -2,6 +2,7 @@ package com.bank.authorization.security;
 
 import com.bank.authorization.model.Users;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -17,7 +18,8 @@ public class UserSecurityDetailsRole implements UserDetails, GrantedAuthority {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList((GrantedAuthority) users);
+        System.out.println(users.getRole());
+        return Collections.singletonList(new SimpleGrantedAuthority(users.getRole()));
     }
 
     @Override
