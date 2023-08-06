@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
 @Entity
 @Table(name = "audit", schema = "auth")
 @Getter
@@ -46,7 +45,7 @@ public class AuditUser {
     private String newEntityJsonImage;
     @Column(name = "entity_json")
     private String entityJsonImage;
-    public void newEntityJson (Users us) {
+    public void newEntityJson (UserDTO us) {
         newEntityJsonImage = "{" +
                 "  \"role\":" + us.getRole() +
                 "  \"profileId\":" + us.getProfileId()+
@@ -54,7 +53,7 @@ public class AuditUser {
                 "}";
     }
 
-    public void entityJson (UserDTO us) {
+    public void entityJson (Users us) {
         entityJsonImage = "{" +
                 "  \"role\":" + us.getRole() +
                 "  \"profileId\":" + us.getProfileId()+

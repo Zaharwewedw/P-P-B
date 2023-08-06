@@ -44,8 +44,8 @@ public class AuditResponse {
             auditUser.modifiedAt();
         }
 
-        auditUser.newEntityJson(users);
-        auditUser.entityJson(userDTO);
+        auditUser.newEntityJson(userDTO);
+        auditUser.entityJson(users);
         auditUserService.saveAudit(auditUser);
         return auditUser;
     }
