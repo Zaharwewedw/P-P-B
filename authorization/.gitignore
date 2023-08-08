@@ -1,4 +1,7 @@
 target
-.idea
 application.properties
 application-local.yaml
+.idea
+*.iws
+*.iml
+*.ipr
